@@ -1,16 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
+import { selectContacts } from 'redux/contacts/selectors';
 
-export const selectContacts = state => state.contacts.items;
 export const selectFilter = state => state.filter;
-
-export const selectIsLoading = state => state.contacts.isLoading;
-
-export const selectError = state => state.contacts.error;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
-    return contacts.filter(contact =>
+    return [...contacts].sort((a, b) => { return a.name.localeCompare(b.name) }).filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   }
