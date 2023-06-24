@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const changeActive = isActive => {
-  switch (isActive) {
+const changeActive = isactive => {
+  switch (isactive) {
     case 'active':
       return 'color: violet';
     case 'inactive':
@@ -27,7 +27,7 @@ export const Link = styled(NavLink)`
     color: magenta;
   }
   &:not(:hover, :focus) {
-    ${({ isActive }) => changeActive(isActive)}
+    ${({ isactive }) => changeActive(isactive)}
   }
   nav &:hover,
   nav &:focus {

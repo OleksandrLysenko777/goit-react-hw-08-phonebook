@@ -9,7 +9,7 @@ export default function Home() {
           <p>Phone</p>
           <p>Book</p>
         </div>
-        <span className={css.flower}>&#10048;</span>
+        <span className={css.phone}>&#9743;</span>
       </h1>
     </div>
   );

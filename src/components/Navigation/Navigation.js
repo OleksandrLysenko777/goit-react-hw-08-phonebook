@@ -9,7 +9,7 @@ export const Navigation = () => {
   return (
     <Nav>
       <Link
-        isActive={location.pathname === '/' ? 'active' : 'inactive'}
+        isactive={location.pathname === '/' ? 'active' : 'inactive'}
         to="/"
         end
       >
@@ -17,7 +17,7 @@ export const Navigation = () => {
       </Link>
       {isLoggedIn && (
         <Link
-          isActive={
+          isactive={
             location.pathname.startsWith('/phonebook') ? 'active' : 'inactive'
           }
           to="/phonebook"
